@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>King Lottery – India's Premium Lottery Platform | Win Big Today</title>
+  <meta name="description" content="King Lottery is India's most trusted premium lottery platform. Play daily lotteries, check live results, and win massive jackpots. Safe, secure & transparent." />
+  <meta name="keywords" content="King Lottery, lottery results, jackpot, India lottery, winning numbers, satta, matka results" />
+  <meta property="og:title" content="King Lottery – Win Big Every Day" />
+  <meta property="og:description" content="India's most trusted premium lottery platform with daily draws and massive jackpots." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="https://kinglottery.in/" />
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "King Lottery",
+    "description": "India's Premium Lottery Platform",
+    "url": "https://kinglottery.in",
+    "sameAs": [],
+    "offers": {
+      "@type": "Offer",
+      "description": "Daily lottery draws with jackpots up to ₹1.5 Crore"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Raleway:wght@300;400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ====================================================
+     NAVBAR
+     ==================================================== -->
+<nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <span class="crown-icon">♛</span>KING LOTTERY
+      <span>EST. 2020 · INDIA</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navCollapse">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="pages/results.html">Results</a></li>
+        <li class="nav-item"><a class="nav-link" href="pages/charts.html">Charts</a></li>
+        <li class="nav-item"><a class="nav-link" href="pages/how-to-play.html">How To Play</a></li>
+        <li class="nav-item"><a class="nav-link" href="pages/about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="pages/contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2">
+          <a class="btn-outline-king" href="pages/login.html" style="font-size:0.78rem;padding:8px 20px;">
+            <i class="bi bi-person-fill"></i> Login
+          </a>
+        </li>
+        <li class="nav-item ms-lg-1">
+          <a class="btn-king" href="pages/register.html" style="font-size:0.78rem;padding:8px 20px;">
+            <i class="bi bi-crown-fill"></i> Join Free
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Live Ticker -->
+<div class="live-ticker" style="margin-top:72px">
+  <div class="ticker-label">⚡ LIVE RESULTS</div>
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- ====================================================
+     HERO SECTION
+     ==================================================== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="container">
+    <div class="row align-items-center min-vh-100">
+      <div class="col-lg-7 hero-content py-5">
+        <p class="hero-eyebrow"><i class="bi bi-crown-fill me-2"></i>India's #1 Premium Lottery Platform</p>
+        <h1 class="hero-title">
+          KING
+          <span>LOTTERY</span>
+        </h1>
+        <p class="hero-tagline">Where Fortune Meets Royalty. Play daily draws, win massive jackpots, and claim your crown today.</p>
+
+        <!-- Jackpot Counter -->
+        <div class="jackpot-box">
+          <div class="jackpot-label">🏆 TODAY'S JACKPOT</div>
+          <div class="jackpot-amount" id="jackpotAmount">₹0</div>
+          <div class="jackpot-sub">Next draw in <span id="heroCountdown" style="color:var(--gold)">loading...</span></div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="pages/register.html" class="btn-king">
+            <i class="bi bi-crown-fill"></i> Play Now — Join Free
+          </a>
+          <a href="#daily-results" class="btn-outline-king">
+            <i class="bi bi-grid-3x3-gap-fill"></i> View Live Results
+          </a>
+        </div>
+      </div>
+
+      <!-- Hero Right — Featured Numbers -->
+      <div class="col-lg-5 d-none d-lg-flex justify-content-center py-5">
+        <div class="glass-card p-4 text-center" style="width:100%;max-width:360px">
+          <p style="font-size:0.7rem;letter-spacing:0.3em;color:var(--text-muted);text-transform:uppercase;margin-bottom:1rem">Latest Winning Numbers</p>
+          <p style="font-family:var(--font-display);color:var(--gold);font-size:0.85rem;letter-spacing:0.2em;margin-bottom:0.75rem">KING GOLD — 11:00 PM</p>
+          <div class="d-flex justify-content-center gap-3 mb-3">
+            <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#FFD700,#C8A200);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.8rem;color:#000;font-weight:700;box-shadow:0 0 30px rgba(255,215,0,0.5)">66</div>
+            <div style="width:72px;height:72px;border-radius:50%;background:rgba(255,215,0,0.08);border:1px solid rgba(255,215,0,0.4);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.8rem;color:var(--gold);">43</div>
+            <div style="width:72px;height:72px;border-radius:50%;background:rgba(255,215,0,0.08);border:1px solid rgba(255,215,0,0.4);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.8rem;color:var(--gold);">08</div>
+          </div>
+          <div class="glow-line my-3"></div>
+          <div class="row g-2 text-center" style="font-size:0.78rem">
+            <div class="col-4"><div style="color:var(--text-muted)">Open</div><div style="color:var(--gold);font-family:var(--font-display);font-size:1.1rem">66</div></div>
+            <div class="col-4"><div style="color:var(--text-muted)">Jodi</div><div style="color:var(--gold);font-family:var(--font-display);font-size:1.1rem">43</div></div>
+            <div class="col-4"><div style="color:var(--text-muted)">Close</div><div style="color:var(--gold);font-family:var(--font-display);font-size:1.1rem">08</div></div>
+          </div>
+          <div class="glow-line my-3"></div>
+          <a href="pages/results.html" class="btn-king w-100" style="font-size:0.78rem;padding:10px">
+            <i class="bi bi-grid-3x3-gap-fill"></i> All Results
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     STATS BAR
+     ==================================================== -->
+<section id="stats-bar">
+  <div class="container">
+    <div class="row g-3 text-center">
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal">
+          <div class="stat-number" id="statWinners">0</div>
+          <div class="stat-label">Happy Winners</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-number" id="statPaid">₹0</div>
+          <div class="stat-label">Total Paid Out</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-number" id="statGames">0</div>
+          <div class="stat-label">Daily Games</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-number" id="statMembers">0</div>
+          <div class="stat-label">Registered Members</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     COUNTDOWN
+     ==================================================== -->
+<section id="countdown-section" class="section-pad-sm">
+  <div class="container text-center">
+    <p class="section-subtitle mb-2">Next Royal Draw In</p>
+    <h2 class="section-title mb-4">⏱ DRAW COUNTDOWN</h2>
+    <div class="countdown-wrap">
+      <div class="cd-unit">
+        <div class="cd-box" id="cdDays">00</div>
+        <div class="cd-label">Days</div>
+      </div>
+      <div class="cd-separator">:</div>
+      <div class="cd-unit">
+        <div class="cd-box" id="cdHours">00</div>
+        <div class="cd-label">Hours</div>
+      </div>
+      <div class="cd-separator">:</div>
+      <div class="cd-unit">
+        <div class="cd-box" id="cdMins">00</div>
+        <div class="cd-label">Minutes</div>
+      </div>
+      <div class="cd-separator">:</div>
+      <div class="cd-unit">
+        <div class="cd-box" id="cdSecs">00</div>
+        <div class="cd-label">Seconds</div>
+      </div>
+    </div>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-top:1.5rem;letter-spacing:0.1em">
+      Today's KING GOLD Draw · 11:00 PM IST
+    </p>
+  </div>
+</section>
+
+<!-- ====================================================
+     DAILY RESULTS
+     ==================================================== -->
+<section id="daily-results" class="section-pad">
+  <div class="container">
+    <h2 class="section-title reveal">Today's Live Results</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle reveal">Updated in real-time · 22 April 2026</p>
+
+    <div id="dailyResultsContainer" class="row g-4"></div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="pages/results.html" class="btn-outline-king">
+        <i class="bi bi-arrow-right-circle"></i> View All Results
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     NUMBER GRID
+     ==================================================== -->
+<section id="number-grid" class="section-pad">
+  <div class="container">
+    <h2 class="section-title reveal">Number Heat Map</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle reveal">Hot · Warm · Cold Analysis</p>
+
+    <div class="row justify-content-center mb-4 reveal">
+      <div class="col-auto d-flex gap-4 flex-wrap justify-content-center" style="font-size:0.78rem">
+        <span><span style="color:var(--gold)">●</span> Hot Numbers (Frequent)</span>
+        <span><span style="color:#ff9040">●</span> Warm Numbers</span>
+        <span><span style="color:#8090ff">●</span> Cold Numbers (Rare)</span>
+        <span><span style="color:var(--text-muted)">●</span> Normal</span>
+      </div>
+    </div>
+
+    <div class="balls-wrap reveal" id="numberBallsWrap"></div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="pages/charts.html" class="btn-outline-king">
+        <i class="bi bi-bar-chart-fill"></i> Full Chart Analysis
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     CHART PREVIEW
+     ==================================================== -->
+<section id="chart-section" class="section-pad">
+  <div class="container">
+    <h2 class="section-title reveal">Weekly Result Chart</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle reveal">King Morning · Last 7 Days</p>
+
+    <div class="glass-card p-0 overflow-hidden reveal">
+      <div class="history-table-wrap" style="border:none;border-radius:12px">
+        <table class="chart-table">
+          <thead>
+            <tr>
+              <th>Date</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
+            </tr>
+          </thead>
+          <tbody id="chartTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="text-center mt-4 reveal">
+      <a href="pages/charts.html" class="btn-king">
+        <i class="bi bi-table"></i> View All Charts
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     HOW TO PLAY
+     ==================================================== -->
+<section id="how-to-play" class="section-pad">
+  <div class="container">
+    <h2 class="section-title reveal">How To Play</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle reveal">Simple Steps to Win Your Crown</p>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 reveal reveal-delay-1">
+        <div class="glass-card step-card">
+          <div class="step-number">1</div>
+          <h3 class="step-title">Register Free</h3>
+          <p class="step-desc">Create your free account in under 2 minutes. No hidden fees, no credit card required to sign up.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal reveal-delay-2">
+        <div class="glass-card step-card">
+          <div class="step-number">2</div>
+          <h3 class="step-title">Choose Your Game</h3>
+          <p class="step-desc">Pick from 5 daily draw games — Morning, Afternoon, Evening, Royal Night, or King Gold.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal reveal-delay-3">
+        <div class="glass-card step-card">
+          <div class="step-number">3</div>
+          <h3 class="step-title">Pick Numbers</h3>
+          <p class="step-desc">Select your lucky numbers or use our Smart Pick system powered by frequency analysis.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal reveal-delay-4">
+        <div class="glass-card step-card">
+          <div class="step-number">4</div>
+          <h3 class="step-title">Claim Your Prize</h3>
+          <p class="step-desc">Winnings are credited to your account instantly. Withdraw anytime via UPI, NEFT, or Bank Transfer.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5 reveal">
+      <a href="pages/how-to-play.html" class="btn-king">
+        <i class="bi bi-play-circle-fill"></i> Full Guide
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     WHY CHOOSE
+     ==================================================== -->
+<section id="why-choose" class="section-pad">
+  <div class="container">
+    <h2 class="section-title reveal">Why Choose King Lottery?</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle reveal">Trusted by 2.5 Lakh+ Players Across India</p>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="glass-card feature-card">
+          <span class="feature-icon">🏆</span>
+          <h3 class="feature-title">Guaranteed Payouts</h3>
+          <p class="feature-text">Every winning prize is guaranteed and paid within 24 hours. Zero delays, zero disputes.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="glass-card feature-card">
+          <span class="feature-icon">🔐</span>
+          <h3 class="feature-title">Bank-Grade Security</h3>
+          <p class="feature-text">256-bit SSL encryption protects all transactions. Your data and money are completely safe.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+        <div class="glass-card feature-card">
+          <span class="feature-icon">⚡</span>
+          <h3 class="feature-title">Live Results</h3>
+          <p class="feature-text">Results are published live and updated instantly. Never miss a draw with our real-time notifications.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="glass-card feature-card">
+          <span class="feature-icon">📊</span>
+          <h3 class="feature-title">Smart Analytics</h3>
+          <p class="feature-text">Access detailed number frequency charts, heat maps, and pattern analysis to play smarter.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="glass-card feature-card">
+          <span class="feature-icon">🎯</span>
+          <h3 class="feature-title">5 Daily Draws</h3>
+          <p class="feature-text">Five draws every single day. More chances to win, more excitement, more royal victories.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+        <div class="glass-card feature-card">
+          <span class="feature-icon">📱</span>
+          <h3 class="feature-title">Mobile Optimized</h3>
+          <p class="feature-text">Fully optimized for all devices. Play, check results, and manage your account on the go.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     WINNING HISTORY
+     ==================================================== -->
+<section id="winning-history" class="section-pad">
+  <div class="container">
+    <h2 class="section-title reveal">Recent Winners</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle reveal">Real Winners · Real Money · Real Joy</p>
+
+    <div class="history-table-wrap reveal">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Game</th>
+            <th>Winning Numbers</th>
+            <th>Prize</th>
+            <th>Winner</th>
+          </tr>
+        </thead>
+        <tbody id="historyTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     TESTIMONIALS
+     ==================================================== -->
+<section id="testimonials" class="section-pad">
+  <div class="container">
+    <h2 class="section-title reveal">What Winners Say</h2>
+    <div class="section-divider"></div>
+    <p class="section-subtitle reveal">Join Thousands of Happy King Lottery Members</p>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="glass-card testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">Won ₹2.5 Lakh on King Gold last week! The result was live instantly and money was in my bank the next morning. King Lottery is truly the best.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">R</div>
+            <div>
+              <div class="author-name">Rajesh S.</div>
+              <div class="author-location">Mumbai, Maharashtra</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="glass-card testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">I've been playing for 3 years and have won multiple times. The charts and analytics really help me pick smarter numbers. Highly recommended!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">P</div>
+            <div>
+              <div class="author-name">Priya M.</div>
+              <div class="author-location">Delhi, NCR</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+        <div class="glass-card testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">The platform is incredibly transparent. You can see live results as they happen. I trust King Lottery with my hard-earned money every day.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div>
+              <div class="author-name">Amir K.</div>
+              <div class="author-location">Pune, Maharashtra</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     FAQ
+     ==================================================== -->
+<section id="faq" class="section-pad">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h2 class="section-title reveal">Frequently Asked Questions</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle reveal">Got Questions? We Have Answers.</p>
+
+        <div class="accordion reveal" id="faqAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                How do I start playing King Lottery?
+              </button>
+            </h3>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Register for a free account, choose a daily game, select your numbers or use Smart Pick, and confirm your entry before the draw closes. Results are published live at draw time.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+                When are the daily draw times?
+              </button>
+            </h3>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">We run 5 draws daily: King Morning (10 AM), King Afternoon (1 PM), King Evening (4 PM), Royal Night (8 PM), and King Gold (11 PM) — all times IST.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
+                How do I claim my winnings?
+              </button>
+            </h3>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Winnings are credited automatically to your King Lottery wallet. You can withdraw via UPI, NEFT, IMPS, or direct bank transfer. Withdrawals are processed within 24 hours.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
+                Is King Lottery safe and secure?
+              </button>
+            </h3>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Absolutely. We use 256-bit SSL encryption, two-factor authentication, and all draws are conducted under transparent, verifiable conditions. Your funds are held in a secured escrow account.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">
+                What is the maximum prize I can win?
+              </button>
+            </h3>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">The King Gold jackpot can reach up to ₹1.5 Crore on special draw days. Daily prizes range from ₹10,000 to ₹50 Lakh depending on the game and ticket count.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     CTA SECTION
+     ==================================================== -->
+<section id="cta" class="section-pad text-center">
+  <div class="container">
+    <div class="reveal">
+      <p style="font-size:0.75rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem">Your Fortune Awaits</p>
+      <h2 style="font-family:var(--font-display);font-size:clamp(2rem,5vw,3.5rem);color:#fff;margin-bottom:0.5rem">
+        Ready to Wear Your <span style="color:var(--gold);text-shadow:var(--neon-glow)">Crown?</span>
+      </h2>
+      <p style="color:var(--text-secondary);margin-bottom:2.5rem;font-size:1rem;max-width:500px;margin-left:auto;margin-right:auto">Join 2.5 lakh+ members already winning with King Lottery. Registration is completely free.</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="pages/register.html" class="btn-king" style="font-size:1rem;padding:16px 40px">
+          <i class="bi bi-crown-fill"></i> Create Free Account
+        </a>
+        <a href="pages/results.html" class="btn-outline-king" style="font-size:1rem;padding:16px 40px">
+          <i class="bi bi-eye-fill"></i> View Today's Results
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     FOOTER
+     ==================================================== -->
+<footer id="footer">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand">♛ KING LOTTERY</div>
+        <div class="footer-tagline">India's Premium Lottery Platform</div>
+        <p class="footer-desc">King Lottery is India's most trusted online lottery platform, offering transparent daily draws, instant results, and guaranteed payouts since 2020.</p>
+        <div class="social-links mt-3">
+          <a href="#" class="social-link" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
+          <a href="#" class="social-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pages/results.html">Live Results</a></li>
+          <li><a href="pages/charts.html">Charts</a></li>
+          <li><a href="pages/how-to-play.html">How to Play</a></li>
+          <li><a href="pages/about.html">About Us</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4 class="footer-heading">Games</h4>
+        <ul class="footer-links">
+          <li><a href="pages/results.html">King Morning</a></li>
+          <li><a href="pages/results.html">King Afternoon</a></li>
+          <li><a href="pages/results.html">King Evening</a></li>
+          <li><a href="pages/results.html">Royal Night</a></li>
+          <li><a href="pages/results.html">King Gold</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h4 class="footer-heading">Newsletter</h4>
+        <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:1rem">Get live results & exclusive offers sent directly to you.</p>
+        <div class="input-group" style="gap:8px">
+          <input type="email" class="form-control" placeholder="Enter your email" style="background:rgba(255,215,0,0.04);border:1px solid var(--border-gold);color:var(--text-primary);border-radius:6px;padding:10px 14px;font-size:0.85rem">
+          <button class="btn-king" type="button" style="font-size:0.78rem;padding:10px 18px;white-space:nowrap">Subscribe</button>
+        </div>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-top:12px">
+          <i class="bi bi-shield-check me-1" style="color:var(--gold)"></i>
+          We respect your privacy. No spam, ever.
+        </p>
+        <div class="mt-3" style="font-size:0.78rem;color:var(--text-muted)">
+          <p><i class="bi bi-telephone-fill me-2" style="color:var(--gold)"></i>+91 98765 43210</p>
+          <p><i class="bi bi-envelope-fill me-2" style="color:var(--gold)"></i>support@kinglottery.in</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 King Lottery. All rights reserved. Play responsibly. 18+ only.</p>
+      <p>
+        <a href="#" style="color:var(--text-muted);font-size:0.78rem;margin-right:1.5rem">Privacy Policy</a>
+        <a href="#" style="color:var(--text-muted);font-size:0.78rem;margin-right:1.5rem">Terms of Service</a>
+        <a href="#" style="color:var(--text-muted);font-size:0.78rem">Responsible Gaming</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- ====================================================
+     WINNER POPUP
+     ==================================================== -->
+<div id="winnerPopup" class="glass-card" style="position:fixed;bottom:24px;left:24px;z-index:9998;padding:16px 20px;max-width:320px;transform:translateX(-120%);transition:transform 0.5s cubic-bezier(0.34,1.56,0.64,1);backdrop-filter:blur(20px);box-shadow:0 0 40px rgba(255,215,0,0.3)">
+  <button id="popupClose" style="position:absolute;top:10px;right:12px;background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1rem">✕</button>
+  <div class="popup-badge">🔴 LIVE WINNER</div>
+  <div class="popup-title">🎉 New Winner!</div>
+  <p class="popup-msg">
+    <strong id="popupName" style="color:var(--text-primary)"></strong> just won
+    <span id="popupAmount" class="popup-amount"></span>
+    in <strong id="popupGame" style="color:var(--gold)"></strong>
+  </p>
+  <p style="font-size:0.72rem;color:var(--text-muted);margin-top:4px" id="popupTime"></p>
+</div>
+
+<!-- ====================================================
+     ADMIN PANEL
+     ==================================================== -->
+<button id="adminToggle" class="admin-toggle" title="Admin Panel">⚙</button>
+
+<div id="adminPanel">
+  <div class="admin-header">
+    <h4>⚙ Admin Panel</h4>
+    <button id="adminClose" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:1.2rem">✕</button>
+  </div>
+  <div class="admin-body">
+    <p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:1rem">Simulate result updates in real-time</p>
+
+    <div class="admin-section-title">Update Jackpot</div>
+    <div class="mb-3">
+      <input type="text" id="adminJackpot" class="form-control form-king" style="background:rgba(255,215,0,0.04);border:1px solid var(--border-gold);color:var(--text-primary);padding:8px 12px;border-radius:6px;width:100%;font-size:0.85rem" placeholder="Jackpot Amount">
+      <button id="adminJackpotBtn" class="btn-king w-100 mt-2" style="font-size:0.78rem;padding:10px">Update Jackpot</button>
+    </div>
+
+    <div class="admin-section-title">Add / Update Result</div>
+    <div class="mb-2">
+      <label style="font-size:0.72rem;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:4px">Game</label>
+      <select id="adminGame" class="form-control" style="background:rgba(255,215,0,0.04);border:1px solid var(--border-gold);color:var(--text-primary);padding:8px 12px;border-radius:6px;width:100%;font-size:0.82rem">
+        <option value="">-- Select Game --</option>
+      </select>
+    </div>
+    <div class="mb-2">
+      <label style="font-size:0.72rem;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:4px">Time Slot</label>
+      <input type="text" id="adminTime" class="form-control" style="background:rgba(255,215,0,0.04);border:1px solid var(--border-gold);color:var(--text-primary);padding:8px 12px;border-radius:6px;width:100%;font-size:0.82rem" placeholder="e.g. 10:00 AM">
+    </div>
+    <div class="mb-2">
+      <label style="font-size:0.72rem;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:4px">Number (2 digit)</label>
+      <input type="text" id="adminNumber" class="form-control" maxlength="2" style="background:rgba(255,215,0,0.04);border:1px solid var(--border-gold);color:var(--text-primary);padding:8px 12px;border-radius:6px;width:100%;font-size:0.82rem" placeholder="e.g. 47">
+    </div>
+    <div class="mb-3">
+      <label style="font-size:0.72rem;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:4px">Label</label>
+      <select id="adminLabel" class="form-control" style="background:rgba(255,215,0,0.04);border:1px solid var(--border-gold);color:var(--text-primary);padding:8px 12px;border-radius:6px;width:100%;font-size:0.82rem">
+        <option>OPEN</option><option>JODI</option><option>CLOSE</option>
+      </select>
+    </div>
+    <button id="adminUpdateBtn" class="btn-king w-100" style="font-size:0.82rem;padding:12px">
+      <i class="bi bi-check-circle-fill"></i> Update Result
+    </button>
+    <p id="adminMsg" style="font-size:0.8rem;text-align:center;margin-top:10px;opacity:0;transition:opacity 0.3s"></p>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+<script src="js/script.js"></script>
+
+<!-- Hero countdown mini script -->
+<script>
+(function() {
+  const el = document.getElementById('heroCountdown');
+  if (!el) return;
+  function fmt(n) { return n.toString().padStart(2,'0'); }
+  function tick() {
+    const d = new Date(); d.setHours(18,0,0,0);
+    if (d < new Date()) d.setDate(d.getDate()+1);
+    let diff = Math.max(0, d - new Date()) / 1000;
+    const h = Math.floor(diff/3600); diff -= h*3600;
+    const m = Math.floor(diff/60);
+    const s = Math.floor(diff%60);
+    el.textContent = fmt(h) + ':' + fmt(m) + ':' + fmt(s);
+  }
+  tick(); setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>

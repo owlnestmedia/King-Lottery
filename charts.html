@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lottery Result Charts & Analysis | King Lottery</title>
+  <meta name="description" content="King Lottery historical result charts. Weekly, monthly number frequency analysis and pattern charts for all 5 daily games." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@400;500;600;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+<nav id="mainNav" class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="../index.html"><span class="crown-icon">♛</span>KING LOTTERY<span>EST. 2020 · INDIA</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navCollapse">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="results.html">Results</a></li>
+        <li class="nav-item"><a class="nav-link active" href="charts.html">Charts</a></li>
+        <li class="nav-item"><a class="nav-link" href="how-to-play.html">How To Play</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2"><a class="btn-outline-king" href="login.html" style="font-size:0.78rem;padding:8px 20px"><i class="bi bi-person-fill"></i> Login</a></li>
+        <li class="nav-item ms-lg-1"><a class="btn-king" href="register.html" style="font-size:0.78rem;padding:8px 20px"><i class="bi bi-crown-fill"></i> Join Free</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="live-ticker" style="margin-top:72px">
+  <div class="ticker-label">⚡ LIVE</div>
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<section class="page-hero">
+  <div class="container position-relative">
+    <nav aria-label="breadcrumb"><ol class="breadcrumb" style="font-size:0.78rem"><li class="breadcrumb-item"><a href="../index.html" style="color:var(--gold)">Home</a></li><li class="breadcrumb-item active" style="color:var(--text-muted)">Charts</li></ol></nav>
+    <h1 class="page-hero-title">Result Charts</h1>
+    <p class="page-hero-sub">Historical Data · Frequency Analysis · Pattern Charts</p>
+  </div>
+</section>
+
+<section class="section-pad" style="background:var(--bg-deep)">
+  <div class="container">
+
+    <!-- Chart Selector -->
+    <div class="d-flex gap-2 mb-4 flex-wrap reveal">
+      <button class="result-tab-btn btn-king" data-target="chart-morning" style="font-size:0.75rem;padding:8px 18px">King Morning</button>
+      <button class="result-tab-btn btn-outline-king active" data-target="chart-afternoon" style="font-size:0.75rem;padding:8px 18px">King Afternoon</button>
+      <button class="result-tab-btn btn-outline-king" data-target="chart-evening" style="font-size:0.75rem;padding:8px 18px">King Evening</button>
+      <button class="result-tab-btn btn-outline-king" data-target="chart-night" style="font-size:0.75rem;padding:8px 18px">Royal Night</button>
+      <button class="result-tab-btn btn-outline-king" data-target="chart-gold" style="font-size:0.75rem;padding:8px 18px">King Gold</button>
+    </div>
+
+    <!-- Number Frequency Heatmap -->
+    <div class="glass-card p-4 mb-4 reveal">
+      <h2 class="section-title text-start mb-1" style="font-size:1.5rem">Number Frequency Heatmap</h2>
+      <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:1.5rem">Last 30 days · King Morning · Darker = More Frequent</p>
+      <div class="balls-wrap" id="numberBallsWrap"></div>
+    </div>
+
+    <!-- Weekly Chart -->
+    <div class="glass-card p-0 overflow-hidden mb-4 reveal">
+      <div style="padding:1.5rem;border-bottom:1px solid var(--border-gold)">
+        <h2 class="section-title text-start mb-0" style="font-size:1.4rem">Weekly Result Chart — King Morning</h2>
+      </div>
+      <div class="history-table-wrap" style="border:none;border-radius:0">
+        <table class="chart-table">
+          <thead><tr><th>Date</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead>
+          <tbody id="chartTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Monthly Chart -->
+    <div class="glass-card p-0 overflow-hidden reveal">
+      <div style="padding:1.5rem;border-bottom:1px solid var(--border-gold)">
+        <h2 class="section-title text-start mb-0" style="font-size:1.4rem">Monthly Pattern — April 2026</h2>
+      </div>
+      <div class="history-table-wrap" style="border:none;border-radius:0">
+        <table class="chart-table" style="min-width:900px">
+          <thead>
+            <tr>
+              <th>Game</th>
+              <th>1st</th><th>2nd</th><th>3rd</th><th>4th</th><th>5th</th>
+              <th>6th</th><th>7th</th><th>8th</th><th>9th</th><th>10th</th>
+              <th>Hot #</th><th>Cold #</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="color:var(--gold)">King Morning</td><td><span class="winner-num">47</span></td><td><span class="winner-num">62</span></td><td><span class="winner-num">35</span></td><td><span class="winner-num">78</span></td><td><span class="winner-num">11</span></td><td><span class="winner-num">25</span></td><td><span class="winner-num">50</span></td><td><span class="winner-num">38</span></td><td><span class="winner-num">71</span></td><td><span class="winner-num">44</span></td><td style="color:#ff9040">47</td><td style="color:#8090ff">03</td></tr>
+            <tr><td style="color:var(--gold)">King Afternoon</td><td><span class="winner-num">59</span></td><td><span class="winner-num">87</span></td><td><span class="winner-num">44</span></td><td><span class="winner-num">31</span></td><td><span class="winner-num">58</span></td><td><span class="winner-num">63</span></td><td><span class="winner-num">77</span></td><td><span class="winner-num">22</span></td><td><span class="winner-num">95</span></td><td><span class="winner-num">16</span></td><td style="color:#ff9040">59</td><td style="color:#8090ff">11</td></tr>
+            <tr><td style="color:var(--gold)">King Evening</td><td><span class="winner-num">12</span></td><td><span class="winner-num">48</span></td><td><span class="winner-num">76</span></td><td><span class="winner-num">33</span></td><td><span class="winner-num">89</span></td><td><span class="winner-num">55</span></td><td><span class="winner-num">21</span></td><td><span class="winner-num">67</span></td><td><span class="winner-num">40</span></td><td><span class="winner-num">83</span></td><td style="color:#ff9040">12</td><td style="color:#8090ff">18</td></tr>
+            <tr><td style="color:var(--gold)">Royal Night</td><td><span class="winner-num">91</span></td><td><span class="winner-num">27</span></td><td><span class="winner-num">65</span></td><td><span class="winner-num">18</span></td><td><span class="winner-num">43</span></td><td><span class="winner-num">72</span></td><td><span class="winner-num">09</span></td><td><span class="winner-num">56</span></td><td><span class="winner-num">34</span></td><td><span class="winner-num">81</span></td><td style="color:#ff9040">91</td><td style="color:#8090ff">25</td></tr>
+            <tr><td style="color:var(--gold)">King Gold</td><td><span class="winner-num">66</span></td><td><span class="winner-num">43</span></td><td><span class="winner-num">19</span></td><td><span class="winner-num">82</span></td><td><span class="winner-num">37</span></td><td><span class="winner-num">54</span></td><td><span class="winner-num">28</span></td><td><span class="winner-num">71</span></td><td><span class="winner-num">05</span></td><td><span class="winner-num">90</span></td><td style="color:#ff9040">66</td><td style="color:#8090ff">44</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="glass-card p-3 mt-4 reveal">
+      <div class="row g-3 text-center" style="font-size:0.8rem">
+        <div class="col-6 col-md-3"><span style="color:var(--gold)">●</span> Hot Numbers — Appeared 10+ times</div>
+        <div class="col-6 col-md-3"><span style="color:#ff9040">●</span> Warm Numbers — Appeared 5-9 times</div>
+        <div class="col-6 col-md-3"><span style="color:#8090ff">●</span> Cold Numbers — Appeared less than 3 times</div>
+        <div class="col-6 col-md-3"><span style="color:var(--text-muted)">●</span> Normal — Average frequency</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="footer" style="padding-bottom:2rem">
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2026 King Lottery. All rights reserved. Play responsibly. 18+ only.</p>
+      <div class="social-links"><a href="#" class="social-link"><i class="bi bi-telegram"></i></a><a href="#" class="social-link"><i class="bi bi-whatsapp"></i></a></div>
+    </div>
+  </div>
+</footer>
+
+<style>.result-tab-pane{display:none}.result-tab-pane.active{display:block}</style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/script.js"></script>
+</body>
+</html>
